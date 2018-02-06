@@ -15,7 +15,9 @@
   - name: clone repo
     git: 
      repo: https://github.com/ZilingZhou/cse356hw1 
-     dest: /var/www/html
+     dest: /tmp/clone
+  - name: move repo
+    command: mv /tmp/clone /var/www/html/
   - name: start apache2	
     service: 
      name: apache2 
