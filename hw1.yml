@@ -7,6 +7,8 @@
       apt: name=apache2 update_cache=yes
     - name: install git
       apt: name=git update_cache=yes
+    - name: clean repo folder
+      command: rm /var/www/html/index.html
     - name: clone repo
       git: repo=https://github.com/ZilingZhou/cse356hw1 dest=/tmp/clone
     - name: move repo
