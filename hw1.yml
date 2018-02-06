@@ -5,20 +5,20 @@
   become_user: root
   tasks:
   - name: install apache2
-    apt: 
-     name: apache2 
+    apt:
+     name: apache2
      update_cache: yes
   - name: install git
-    apt: 
-     name: git 
+    apt:
+     name: git
      update_cache: yes
   - name: clone repo
-    git: 
-     repo: https://github.com/ZilingZhou/cse356hw1 
+    git:
+     repo: https://github.com/ZilingZhou/cse356hw1
      dest: /tmp/clone
   - name: move repo
     command: mv /tmp/clone /var/www/html/
-  - name: start apache2	
-    service: 
-     name: apache2 
+  - name: start apache2
+    service:
+     name: apache2
      state: started
